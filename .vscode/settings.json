@@ -76,5 +76,7 @@
         "bit": "cpp",
         "codecvt": "cpp",
         "filesystem": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "enabled",
+    "ros.distro": "noetic"
 }

@@ -2,5 +2,8 @@
   <node name="autonomy_simulator" pkg="autonomy_simulator" type="autonomy_simulator" output="log" respawn="true">
     <param name="generate_obstacles" value="false"/>
   </node>
+  <node
+        name="rover_navigation" pkg="autonomy_simulator" type="rover_navigation" output="screen">
+    </node>
   <!-- You can add your nodes here to launch them! :) -->
 </launch>
