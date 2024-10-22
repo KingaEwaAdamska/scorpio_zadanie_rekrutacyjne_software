@@ -47,8 +47,8 @@ add_executable(autonomy_simulator
 )
 
 add_executable(rover_navigation
-src/rover_navigation.cpp
-src/main_n.cpp
+src/rover_navigation/rover_navigation.cpp
+src/rover_navigation/main.cpp
 )
 
 target_link_libraries(rover_navigation ${catkin_LIBRARIES})

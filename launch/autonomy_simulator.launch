@@ -1,6 +1,6 @@
 <launch>
   <node name="autonomy_simulator" pkg="autonomy_simulator" type="autonomy_simulator" output="log" respawn="true">
-    <param name="generate_obstacles" value="false"/>
+    <param name="generate_obstacles" value="true"/>
   </node>
   <node
         name="rover_navigation" pkg="autonomy_simulator" type="rover_navigation" output="screen">
