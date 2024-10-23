@@ -19,6 +19,7 @@ class RoverNavigation {
     int8_t _roverOrientation; 
     int8_t _roverPoseX;
     int8_t _roverPoseY;
+    int8_t _roverCurrentHeight;
 
     //Map Data
     int8_t _map[GRID_SIZE][GRID_SIZE];
@@ -32,19 +33,24 @@ class RoverNavigation {
     //Rover drive
     void navigateToGoal();
     void changeCell(int,int);
+    void changeOrientationOrMove(int targetOrientation, uint8_t moveCommand);
 
     //RoverMove Publisher
     ros::Publisher _roverMovePublisher;
     void navigationMovePub(ros::Publisher&, uint8_t);
-    void changeOrientationOrMove(int targetOrientation, uint8_t moveCommand);
+
+    //RoverMap Publisher
+    ros::Publisher _roverMapPublisher;
+    void roverMapPub(ros::Publisher&);
+    
 
     //SetGoal subscriber
     ros::Subscriber _roverGoalSubscriber;
     void roverGoalCallback(const autonomy_simulator::SetGoal::ConstPtr& msg);
 
-    //Servive /get_map client
-    ros::ServiceClient _mapInput;
-    void GetMapServiceClient();
+    //Rover sensor
+    void sensorDataSaver();
+
 
  public:
     void spin();
